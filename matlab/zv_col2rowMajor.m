@@ -1,5 +1,5 @@
-function Y = col2rowMajor(X)
-%COL2ROWMAJOR transforms array data from column major to row major layout
+function Y = zv_col2rowMajor(X)
+%ZV_COL2ROWMAJOR column to row major order
 %   Y = COL2ROWMAJOR(X) transforms the array X to from the column
 %   major layout to row major layout (it does not change the dimensions)
 %
