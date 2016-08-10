@@ -14,8 +14,8 @@ function img_names = zv_getImgsInSubdirs(path, suffix)
 subdirs = strsplit(genpath(path), ':')';
 
 % extract the images in each of these subdirectories
-pngs = cellfun(@(x) getImgsInDir(x, suffix), ...
+imgs = cellfun(@(x) zv_getImgsInDir(x, suffix), ...
                     subdirs, 'UniformOutput', false);
 
 % flatten the cell array
-img_names = vertcat(pngs{:});
+img_names = vertcat(imgs{:});
