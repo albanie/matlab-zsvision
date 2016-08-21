@@ -1,7 +1,7 @@
 import os
 import glob
 
-def get_imgs_in_dir(image_dir, suffix='jpg'):
+def get_img_paths_in_dir(image_dir, suffix='jpg'):
     """
     returns list of paths to images in the given
     directory. 
