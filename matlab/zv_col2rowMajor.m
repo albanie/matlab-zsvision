@@ -1,7 +1,10 @@
-function Y = zv_col2rowMajor(X)
+function Y = zv_col2rowMajor(X, useGpu)
 %ZV_COL2ROWMAJOR column to row major order
 %   Y = COL2ROWMAJOR(X) transforms the array X to from the column
 %   major layout to row major layout (it does not change the dimensions)
+%
+%   `useGpu` takes a boolean value which determines whether the
+%    transformation should take place on the gpu.
 %
 %   Notes:
 %   Languages such as MATLAB, FORTRAN, Julia and R store arrays in
@@ -13,12 +16,22 @@ function Y = zv_col2rowMajor(X)
 %   Copyright (C) 2016 Samuel Albanie
 %   All rights reserved.
 
+% determine gpu usage
+if nargin == 1
+    useGpu = false ;
+end
+
 % flatten the values of X into a column vector
 valuesX = X(:);
 
 % create vector that will be filled with values of X
 % in row major order
 valuesY = zeros(size(valuesX));
+
+% move to gpu if needed
+if useGpu 
+    valuesY = gpuArray(valuesY) ;
+end
 
 % determine the number of dimensions of Y
 dimIndexes = cell(1, ndims(X));

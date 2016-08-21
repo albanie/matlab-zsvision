@@ -71,7 +71,7 @@ keep(1) = 1 ;
 
 overlaps = [];
 % loop over the remaining sorted boxes
-for i = 2:numel(sortedIdx)
+for i = 2:numel(filteredIdx)
     queryBox = bboxes(sortedIdx(i), :) ;
     existingBoxes = bboxes(sortedIdx(keep), :) ;
     overlap = jaccardOverlap(queryBox, existingBoxes) ;

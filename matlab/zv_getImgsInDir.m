@@ -1,8 +1,8 @@
 function imgNames = zv_getImgsInDir(path, suffix)
 %ZV_GETIMGSINDIR loads cell array of image paths
-%   ZV_GETIMGSINDIR recursively searches the for images
-%   with the given suffix, starting from the directory
-%   found at path 'path'. 
+%   ZV_GETIMGSINDIR(path, suffix) recursively searches 
+%   the for images with the given suffix, starting from 
+%   the directory found at path 'path'. 
 %
 %   Copyright (C) 2016 Samuel Albanie
 %   All rights reserved.
