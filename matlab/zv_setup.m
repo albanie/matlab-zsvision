@@ -8,4 +8,4 @@ function zv_setup
 
 root = zv_root() ;
 addpath(fullfile(root, 'matlab')) ;
-addpath(fullfile(root, 'utils')) ;
+addpath(fullfile(root, 'matlab', 'utils')) ;
