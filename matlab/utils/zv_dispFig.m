@@ -14,11 +14,11 @@ function dispFig
 %   Copyright (C) 2016 Samuel Albanie
 %   All rights reserved.
 
-% save figure as png image
-print('_tmp.png', '-dpng');
+% save figure as jpeg image 
+print('_tmp.jpg', '-djpeg');
 
 % display in iterm
-!imgcat _tmp.png
+!imgcat _tmp.jpg
 
 % clear up
-delete('_tmp.png');
+delete('_tmp.jpg');
