@@ -20,10 +20,10 @@ def zv_dispFig():
     """
 
     # save figure as png image
-    plt.savefig('_tmp.png')
+    plt.savefig('_tmp.jpeg')
     
     # display in iterm
-    subprocess.call(['imgcat','_tmp.png'])
+    subprocess.call(['imgcat','_tmp.jpeg'])
     
     # clear up
-    os.remove('_tmp.png');
+    os.remove('_tmp.jpeg');
