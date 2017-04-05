@@ -2,7 +2,9 @@ import os
 import subprocess
 import matplotlib.pyplot as plt
 
-def zv_dispFig():
+IMGCAT = os.path.expanduser('~/.scripts/imgcat')
+
+def zv_dispFig(imgcat_path=IMGCAT):
     """
     shows a matplotlib plot inline in iTerm by saving 
     it to a temporary file, displaying the file and 
@@ -19,11 +21,18 @@ def zv_dispFig():
     All rights reserved.
     """
 
-    # save figure as png image
-    plt.savefig('_tmp.jpeg')
-    
+    # save figure as temp image
+    im_name = '_tmp.jpeg'
+
+    # switch to png if jpeg is unsupported
+    try:
+        plt.savefig(im_name)
+    except ValueError:
+        im_name = '_tmp.png'
+        plt.savefig(im_name)
+
     # display in iterm
-    subprocess.call(['imgcat','_tmp.jpeg'])
+    subprocess.call([imgcat_path, im_name])
     
     # clear up
-    os.remove('_tmp.jpeg');
+    os.remove(im_name)
