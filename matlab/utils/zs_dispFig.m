@@ -1,6 +1,6 @@
-function dispFig
-%DISPFIG shows matlab plots inline in iTermt
-%   DISPFIG displays the current matlab figure inline
+function zs_dispFig
+%ZS_DISPFIG shows matlab plots inline in iTermt
+%   ZS_DISPFIG displays the current matlab figure inline
 %   by saving it to a temporary file, displaying the
 %   file and then cleaning up.
 %
