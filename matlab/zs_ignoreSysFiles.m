@@ -1,7 +1,10 @@
-function files = zv_ignoreSysFiles(files)
-% ZV_IGNORESYSFILES removes system files
-%   ZV_IGNORESYSFILES removes files produced by the operating 
+function files = zs_ignoreSysFiles(files)
+% ZS_IGNORESYSFILES removes system files
+%   ZS_IGNORESYSFILES removes files produced by the operating 
 %   system from the cell array of file names contained in files.name
+%
+%   Example usage:
+%   f = zv_ignoreSysFiles(dir(fullfile('dir', '*'))) ;
 %
 %   Copyright (C) 2016 Samuel Albanie
 %   All rights reserved.
