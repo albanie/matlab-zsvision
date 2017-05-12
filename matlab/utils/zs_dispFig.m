@@ -15,10 +15,12 @@ function zs_dispFig
 %   All rights reserved.
 
 % save figure as jpeg image 
-print('_tmp.jpg', '-djpeg');
+path = sprintf('%s.jpg', tempname) ;
+print(path, '-djpeg');
 
 % display in iterm
-!imgcat _tmp.jpg
+cmd = sprintf('imgcat %s',path) ;
+system(cmd) ;
 
 % clear up
-delete('_tmp.jpg');
+delete(path);
