@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 IMGCAT = os.path.expanduser('~/.scripts/imgcat')
 
-def zv_dispFig(imgcat_path=IMGCAT):
+def zs_dispFig(imgcat_path=IMGCAT):
     """
     shows a matplotlib plot inline in iTerm by saving 
     it to a temporary file, displaying the file and 
