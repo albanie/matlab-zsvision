@@ -6,6 +6,6 @@ function zs_mkdirRec(dirname)
 %   constructed (recursively).
 
   while ~exist(fileparts(dirname), 'dir')
-    mkdirRecursive(fileparts(dirname)) ;
+    zs_mkdirRec(fileparts(dirname)) ;
   end
   if ~exist(dirname, 'dir'), mkdir(dirname) ; end
