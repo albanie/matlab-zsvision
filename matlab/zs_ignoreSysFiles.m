@@ -9,12 +9,12 @@ function files = zs_ignoreSysFiles(files)
 %   Copyright (C) 2016 Samuel Albanie
 %   All rights reserved.
 
-ignoreIdx = cellfun(@(x) isIgnored(x), {files.name}, 'Uni', true);
-files(ignoreIdx) = [];
+  ignoreIdx = cellfun(@(x) isIgnored(x), {files.name}, 'Uni', true);
+  files(ignoreIdx) = [];
 
 % -------------------------
 function ignore = isIgnored(name)
 % -------------------------
-systemFiles = {'.', '..', '.DS_Store'};
-sysPrefix = '._' ;
-ignore = ismember(name, systemFiles) || strcmp(name(1:2), sysPrefix) ;
+  systemFiles = {'.', '..', '.DS_Store'};
+  sysPrefix = '._' ;
+  ignore = ismember(name, systemFiles) || strcmp(name(1:2), sysPrefix) ;
