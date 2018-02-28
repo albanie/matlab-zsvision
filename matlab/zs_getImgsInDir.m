@@ -1,11 +1,11 @@
 function imgNames = zs_getImgsInDir(path, suffix)
 %ZS_GETIMGSINDIR loads cell array of image paths
-%   ZS_GETIMGSINDIR(path, suffix) recursively searches 
-%   the for images with the given suffix, starting from 
-%   the directory found at path 'path'. 
+%   ZS_GETIMGSINDIR(path, suffix) recursively searches
+%   the for images with the given suffix, starting from
+%   the directory found at path 'path'.
 %
-%   Copyright (C) 2016 Samuel Albanie
-%   All rights reserved.
+% Copyright (C) 2016 Samuel Albanie
+% Licensed under The MIT License [see LICENSE.md for details]
 
 % List all files in the given directory with given suffix
 imgFiles = dir(fullfile(path, sprintf('*.%s', suffix)));
