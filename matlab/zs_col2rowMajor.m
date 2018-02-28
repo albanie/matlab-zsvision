@@ -1,5 +1,5 @@
 function Y = zs_col2rowMajor(X, useGpu)
-%ZV_COL2ROWMAJOR column to row major order
+%ZS_COL2ROWMAJOR column to row major order
 %   Y = COL2ROWMAJOR(X) transforms the array X to from the column
 %   major layout to row major layout (it does not change the dimensions)
 %
@@ -29,7 +29,7 @@ valuesX = X(:);
 valuesY = zeros(size(valuesX));
 
 % move to gpu if needed
-if useGpu 
+if useGpu
     valuesY = gpuArray(valuesY) ;
 end
 
