@@ -1,9 +1,9 @@
-function zv_profSave(profInfo, dirname)
-%ZV_PROFSAVE profsave, but without opening the browser
-%   ZV_PROFSAVE performs the same function as profsave (see help profsave), 
+function zs_profSave(profInfo, dirname)
+%ZS_PROFSAVE profsave, but without opening the browser
+%   ZS_PROFSAVE performs the same function as profsave (see help profsave),
 %   with the small difference that it does not open the resulting html files
 %   in the browser, and defaults to saving them in '/tmp/profile'
-%   
+%
 %   This function is a minor modification of the MATLAB profsave function.
 
 if nargin < 1
@@ -28,10 +28,10 @@ if ~exist(fullDirname,'dir')
         error(message('MATLAB:profiler:UnableToCreateDirectory', fullDirname));
     end
 end
-    
+
 for n = 0:length(profInfo.FunctionTable)
     str = profview(n,profInfo);
-    
+
     str = regexprep(str,'<a href="matlab: profview\((\d+)\);">','<a href="file$1.html">');
     % The question mark makes the .* wildcard non-greedy
     str = regexprep(str,'<a href="matlab:.*?>(.*?)</a>','$1');
@@ -50,5 +50,5 @@ for n = 0:length(profInfo.FunctionTable)
     else
         error(message('MATLAB:profiler:UnableToOpenFile', filename));
     end
-    
+
 end
