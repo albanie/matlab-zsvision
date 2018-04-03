@@ -8,16 +8,14 @@ function flatX = zs_flattenCell(X)
 % Copyright (C) 2016 Samuel Albanie
 % Licensed under The MIT License [see LICENSE.md for details]
 
-flatX = {} ;
-
-% flatten by recursion
-for i = 1:numel(X)
+  flatX = {} ;
+  for i = 1:numel(X) % flatten by recursion
 
     % store any non-cell elements
-    if(~iscell(X{i}))
-        flatX = horzcat(flatX, X{i}) ;
+    if (~iscell(X{i}))
+      flatX = horzcat(flatX, X{i}) ;
     else
-       tmp = zs_flattenCell(X{i}) ;
-       flatX = horzcat(flatX, tmp{:}) ;
+      tmp = zs_flattenCell(X{i}) ;
+      flatX = horzcat(flatX, tmp{:}) ;
     end
-end
+  end
