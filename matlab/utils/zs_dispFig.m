@@ -4,17 +4,17 @@ function zs_dispFig
 %   by saving it to a temporary file, displaying the
 %   file and then cleaning up.
 %
-%   Note: This function requires the use of an iTerm 
+%   Note: This function requires the use of an iTerm
 %   terminal (available from https://www.iterm2.com)
 %   and requires that the `imgcat` script is on your
-%   $PATH. It can be useful when running MATLAB on a 
-%   server when you don't have access to a GUI to 
+%   $PATH. It can be useful when running MATLAB on a
+%   server when you don't have access to a GUI to
 %   display figures.
 %
 %   Copyright (C) 2016 Samuel Albanie
 %   All rights reserved.
 
-% save figure as jpeg image 
+% save figure as jpeg image
 path = sprintf('%s.jpg', tempname) ;
 print(path, '-djpeg');
 
@@ -23,4 +23,4 @@ cmd = sprintf('imgcat %s',path) ;
 system(cmd) ;
 
 % clear up
-delete(path);
+delete(path) ;

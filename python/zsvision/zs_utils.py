@@ -5,13 +5,13 @@ import fnmatch
 def get_img_paths_in_dir(image_dir, suffix='jpg'):
     """
     returns list of paths to images in the given
-    directory. 
+    directory.
 
     Args:
         image_dir (string): path to the directory
             containing the images
         suffix (string): the suffix used to select
-            the images (default is `jpg`) 
+            the images (default is `jpg`)
 
     Returns:
         [string]: a list of paths
@@ -25,8 +25,8 @@ def get_img_paths_in_dir(image_dir, suffix='jpg'):
 
 def get_img_paths_in_subdirs(image_dir, suffix='jpg'):
     """
-    returns list of paths to images in the subdirectories 
-    given of the given directory. 
+    returns list of paths to images in the subdirectories
+    given of the given directory.
 
     based on a StackOverflow answer by Johan Dahlin
 
@@ -34,7 +34,7 @@ def get_img_paths_in_subdirs(image_dir, suffix='jpg'):
         image_dir (string): path to the directory
             containing the subdirs
         suffix (string): the suffix used to select
-            the images (default is `jpg`) 
+            the images (default is `jpg`)
 
     Returns:
         [string]: a list of paths
