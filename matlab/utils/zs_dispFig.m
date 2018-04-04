@@ -14,13 +14,21 @@ function zs_dispFig
 %   Copyright (C) 2016 Samuel Albanie
 %   All rights reserved.
 
-% save figure as jpeg image
-path = sprintf('%s.jpg', tempname) ;
-print(path, '-djpeg');
+  % save figure as jpeg image
+  path = sprintf('%s.jpg', tempname) ;
 
-% display in iterm
-cmd = sprintf('imgcat %s',path) ;
-system(cmd) ;
+  % use ramdisk if available
+  if exist('/dev/shm', 'dir')
+    path = strrep(path, 'tmp', 'dev/shm') ;
+  end
 
-% clear up
-delete(path) ;
+  print(path, '-djpeg') ;
+
+  % display in iterm
+  cmd = sprintf('imgcat %s',path) ;
+  system(cmd) ;
+
+  pause(0.05) ; % give system call a chance to exectute
+
+  % clear up
+  delete(path) ;
