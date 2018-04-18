@@ -1,4 +1,4 @@
-function opts = zs_argparse(varargin)
+function opts = zs_argparse(opts, varargin)
 % ZS_ARGPARSE parses the argument pairs into a struct
 %   ZS_ARGPARSE reads the name, value pairs passed as inputs to this function.
 %   The last argument can be a struct defining additional options.
@@ -10,12 +10,18 @@ function opts = zs_argparse(varargin)
 %   All rights reserved.
 
   % first check to see if a struct of options was supplied as the final arg
-  lastArg = varargin{end} ;
-  if isa(lastArg, 'struct')
-    opts = lastArg ;
-    varargin(end) = [] ;
-  else
-    opts = struct() ;
+  if ~isempty(varargin)
+    lastArg = varargin{end} ;
+    if isa(lastArg, 'struct')
+      varargin(end) = [] ;
+      fnames = fieldnames(lastArg) ;
+      extraArgs = cell(1, numel(fnames) * 2) ;
+      for ii = 1:numel(fnames)
+        extraArgs{ii * 2 - 1} = fnames{ii} ;
+        extraArgs{ii * 2} = lastArg.(fnames{ii}) ;
+      end
+      varargin = horzcat(varargin, extraArgs) ;
+    end
   end
 
   % return if remaining argument is an empty cell
@@ -32,8 +38,8 @@ function opts = zs_argparse(varargin)
           'inputs that define name-value pairs')) ;
 
   % add name-value pair arguments to the options structure
-  for i = 1:2:numel(varargin)
-    property = varargin{i} ;
-    value = varargin{ i + 1 } ;
-    opts.(property) = value ;
+  for ii = 1:2:numel(varargin)
+    property = varargin{ii} ;
+    value = varargin{ii + 1} ;
+    opts = setfield(opts, property, value) ; %#ok - dynamic fields have issues
   end
