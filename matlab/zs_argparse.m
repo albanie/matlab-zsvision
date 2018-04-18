@@ -1,4 +1,4 @@
-function opts = zs_argParse(varargin)
+function opts = zs_argparse(varargin)
 % ZS_ARGPARSE parses the argument pairs into a struct
 %   ZS_ARGPARSE reads the name, value pairs passed as inputs to this function.
 %   The last argument can be a struct defining additional options.
@@ -9,8 +9,7 @@ function opts = zs_argParse(varargin)
 %   Copyright (C) 2016 Samuel Albanie
 %   All rights reserved.
 
-
-  % first check to see if a struct of options was supplied as the final argument
+  % first check to see if a struct of options was supplied as the final arg
   lastArg = varargin{end} ;
   if isa(lastArg, 'struct')
     opts = lastArg ;

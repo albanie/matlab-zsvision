@@ -5,5 +5,5 @@ function x = zs_conjgrad(func, x0, varargin)
 %   point X0.
 
   opts.
-  opts = vl_argparse(opts, varargin) ;
+  opts = zs_argparse(opts, varargin) ;
 
