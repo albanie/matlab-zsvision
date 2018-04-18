@@ -1,4 +1,4 @@
 testCase = test_zs_bboxNMS ;
 res1 = run(testCase,'testSingleBox') ;
-res1 = run(testCase,'testTwoIntersectingBoxes') ;
-res1 = run(testCase,'testTwoNonIntersectingBoxes') ;
+res2 = run(testCase,'testTwoIntersectingBoxes') ;
+res3 = run(testCase,'testTwoNonIntersectingBoxes') ;
