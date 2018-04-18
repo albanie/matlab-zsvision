@@ -43,7 +43,7 @@ function filteredIdx = zs_bboxMS(bboxes, varargin)
   opts.overlapThreshold = 0.5 ;
   opts.minScoreThreshold = 0.0 ;
   opts.topK = false ;
-  opts = zs_argParse(varargin, opts) ;
+  opts = zs_argparse(varargin, opts) ;
 
   % keep track of "surviving" bboxes with indices
   filteredIdx = (1:size(bboxes, 1))' ;
