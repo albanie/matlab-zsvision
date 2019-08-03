@@ -2,6 +2,7 @@ import os
 import glob
 import fnmatch
 
+
 def get_img_paths_in_dir(image_dir, suffix='jpg'):
     """
     returns list of paths to images in the given
@@ -23,6 +24,7 @@ def get_img_paths_in_dir(image_dir, suffix='jpg'):
     paths = glob.glob(glob_template)
     return paths
 
+
 def get_img_paths_in_subdirs(image_dir, suffix='jpg'):
     """
     returns list of paths to images in the subdirectories
@@ -42,7 +44,7 @@ def get_img_paths_in_subdirs(image_dir, suffix='jpg'):
     Note: Hidden system files are ignored
     """
     image_dir = os.path.expanduser(image_dir)
-    paths = [] 
+    paths = []
     for root, dirnames, fnames in os.walk(image_dir):
         for fname in fnmatch.filter(fnames, '*.{}'.format(suffix)):
             paths.append(os.path.join(root, fname))
